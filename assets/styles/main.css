@@ -1,0 +1,18 @@
+html {
+	font-size:24px;
+	padding:12px;
+	background-color:lightblue;
+}
+.lnk {
+	display:inline-block;
+	min-width:5em;
+	text-align:center;
+	text-decoration:none;
+	color:#116611;
+	background-color:#ee99ee;
+	border:1px solid #cc77cc;
+	border-radius:15px;
+}
+.lnk:hover {
+	background-color:#ffaaff;
+}
