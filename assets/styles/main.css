@@ -1,3 +1,13 @@
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+@import url(https://fonts.googleapis.com/css?family=Droid+Arabic+Kufi);
+@import url(https://fonts.googleapis.com/css?family=Droid+Arabic+Naskh);
+html,body,input,textarea,select,option,h1,h2,h3,h4,h5,h6{font-family:Droid Arabic Naskh,Droid Serif;}
+nav,.nav{font-family:Droid Arabic Kufi,Droid Sans;}
+h1,h2,h3,h4,h5,h6{font-family:Droid Arabic Naskh,Droid Serif;}
+
+/* Styles */
 html {
 	font-size:24px;
 	padding:12px;

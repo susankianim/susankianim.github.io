@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Tamrin 05</title>
+		<style>
+			html body{
+				direction:rtl;
+				}
+			* {
+				box-sizing: border-box;
+				}
+			.box{
+				margin:100px auto;
+				width:400px;
+				height:500px;
+				border-radius:10px;
+				box-shadow:0px 0px 5px #333;
+				}
+			.header{
+				border-bottom:2px solid black;
+				text-align:center;
+				padding:10px;
+				width:300px;
+				margin:0 auto;
+				}
+			.header b{
+				border-bottom:dashed 2px #fff;
+				padding:11px;
+				}
+			.image{
+				text-align:center;
+				padding:10px;
+				}
+			.image img{
+				border-radius:50%;
+				width:150px;
+				height:150px;
+				border:2px black dashed;
+				padding:10px;
+				}
+			.text{
+				padding:10px;
+				}
+			.text label{
+				display:block;
+				padding-bottom:5px;
+				}
+			.text input{
+				border:solid 1px #333;
+				border-radius:5px;
+				padding:5px;
+				width:40%;
+				}
+			.text input:focus{
+				transition:all 0.5s linear;
+				width:100%;
+				}
+			.linup{
+				width:90%;
+				margin:0 auto;
+				padding:10px;
+				border-top:2px solid black;
+				}
+		</style>
+	</head>
+	
+	<body>
+		<form>
+			<div class="box">
+				<div class="header"><b>فرم ورود اعضا</b></div>
+				<div class="image">
+					<img src="image/kitty.jpg" alt="ورود" title="ورود">
+				</div>
+				<div class="text">
+					<label for="tx-name">نام کاربری</label>
+					<input type="text" name="tx-name" placeholder="نام کاربری خود را وارد نمایید." id="tx-name">
+				</div>
+				<div class="text">
+					<label for="tx-pass">کلمه عبور</label>
+					<input type="password" name="tx-pass" placeholder="کلمه غبور را وارد نمایید." id="tx-pass">
+				</div>
+				<div class="linup">
+				<button type="button">ثبت نام</button>
+				<button type="button">ورود</button>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>
