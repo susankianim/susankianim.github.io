@@ -1,75 +1,90 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Spline</title>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <style>
-            * {
-                box-sizing:border-box;
-            }
-            html {
-                font-family:Verdana,sans-serif;
-            }
-            div.cntr {
-                max-width:600px;
-                margin:0 auto;
-            }
-            div.row {
-                display:flex;
-                padding:3px;
-            }
-            label.lbl {
-                flex:0.3;
-            }
-            div.inp {
-                flex:0.7;
-            }
-            input.inp {
-                width:100%;
-            }
-            input.mid {
-                flex:1;
-            }
-            #spline-container {
-                margin-top:1em;
-                margin-bottom:1em;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="cntr">
-            <h1>Natural Spline Demo</h1>
-            <div>
-                <form id="frmMain" action="javascript:void(0);">
-                    <div class="row">
-                        <label class="lbl" for="functionRule">Function Rule</label>
-                        <div class="inp">
-                            <input class="inp" type="text" id="functionRule" name="functionRule"/>
-                        </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Spline</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Verdana, sans-serif;
+        }
+
+        div.cntr {
+            max-width: 800px;
+            padding: 5px;
+            margin: 0 auto;
+            background-color: rgb(250, 250, 250);
+            border: solid rgb(220, 220, 220);
+            border-width: 0px 10px;
+        }
+
+        div.row {
+            display: flex;
+            padding: 3px;
+        }
+
+        label.lbl {
+            flex: 0.3;
+        }
+
+        div.inp {
+            flex: 0.7;
+        }
+
+        input.inp {
+            width: 100%;
+        }
+
+        input.mid {
+            flex: 1;
+        }
+
+        #spline-container {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cntr">
+        <h1>Natural Spline Demo</h1>
+        <div>
+            <form id="frmMain" action="javascript:void(0);">
+                <div class="row">
+                    <label class="lbl" for="functionRule">Function Rule</label>
+                    <div class="inp">
+                        <input class="inp" type="text" id="functionRule" name="functionRule" />
                     </div>
-                    <div class="row">
-                        <label class="lbl" for="knownXs">Known \(x\)s</label>
-                        <div class="inp">
-                            <input class="inp" type="text" id="knownXs" name="knownXs"/>
-                        </div>
+                </div>
+                <div class="row">
+                    <label class="lbl" for="knownXs">Known \(x\)s</label>
+                    <div class="inp">
+                        <input class="inp" type="text" id="knownXs" name="knownXs" />
                     </div>
-                    <div class="row">
-                        <label class="lbl" for="knownValues">Known Values</label>
-                        <div class="inp">
-                            <input class="inp" type="text" id="knownValues" name="knownValues"/>
-                        </div>
+                </div>
+                <div class="row">
+                    <label class="lbl" for="knownValues">Known Values</label>
+                    <div class="inp">
+                        <input class="inp" type="text" id="knownValues" name="knownValues" />
                     </div>
-                    <div class="row">
-                        <input class="mid" type="submit" value="Click"/>
-                    </div>
-                </form>
-            </div>
-            <div id="spline-container"></div>
-            <div class="chart"><canvas id="myChart"></canvas></div>
+                </div>
+                <div class="row">
+                    <input class="mid" type="submit" value="Click" />
+                </div>
+            </form>
         </div>
-        <script src="./app.js"></script>
-    </body>
+        <div id="spline-container"></div>
+        <div class="chart"><canvas id="myChart"></canvas></div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
 </html>
