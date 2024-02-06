@@ -309,12 +309,13 @@
   function update({ isWellFormed, cnfFormula }) {
     try {
       let isWellFormedContainer = document.getElementById("isWellFormed-container");
+      let cnfFormulaContainer = document.getElementById("cnfFormula-container");
       if (isWellFormed) {
         isWellFormedContainer.innerHTML = "This formula is well-formed, and here is its CNF:";
-        let cnfFormulaContainer = document.getElementById("cnfFormula-container");
         cnfFormulaContainer.innerHTML = cnfFormula;
       } else {
         isWellFormedContainer.innerHTML = "This formula is not well-formed.";
+        cnfFormulaContainer.innerHTML = "";
       }
     } catch (e) {
       console.log(e);
