@@ -22,6 +22,7 @@ html {
 	background-color:#ee99ee;
 	border:1px solid #cc77cc;
 	border-radius:15px;
+	padding: 0px 5px;
 }
 .lnk:hover {
 	background-color:#ffaaff;
