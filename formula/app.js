@@ -310,7 +310,7 @@
     try {
       let isWellFormedContainer = document.getElementById("isWellFormed-container");
       if (isWellFormed) {
-        isWellFormedContainer.innerHTML = "This formula is well-formed, and here is it's CNF:";
+        isWellFormedContainer.innerHTML = "This formula is well-formed, and here is its CNF:";
         let cnfFormulaContainer = document.getElementById("cnfFormula-container");
         cnfFormulaContainer.innerHTML = cnfFormula;
       } else {
