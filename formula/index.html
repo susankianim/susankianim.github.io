@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Formula</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Verdana, sans-serif;
+        }
+
+        div.cntr {
+            max-width: 800px;
+            padding: 10px;
+            margin: 0 auto;
+            background-color: rgb(250, 250, 250);
+            border: solid rgb(220, 220, 220);
+            border-width: 0px 10px;
+            border-radius: 10px;
+        }
+
+        div.row {
+            display: flex;
+            padding: 3px;
+        }
+
+        label.lbl {
+            flex: 0.3;
+        }
+
+        div.inp {
+            flex: 0.7;
+        }
+
+        input.inp {
+            width: 100%;
+        }
+
+        input.mid {
+            flex: 1;
+        }
+
+        #spline-container {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cntr">
+        <h1>Well-formed Formula</h1>
+        <div>
+            <form id="frmMain" action="javascript:void(0);">
+                <div class="row">
+                    <label class="lbl" for="latexStr">latex formula</label>
+                    <div class="inp">
+                        <input class="inp" type="text" id="latexStr" name="latexStr" />
+                    </div>
+                </div>
+                <div class="row">
+                    <input class="mid" type="submit" value="Click" />
+                </div>
+            </form>
+        </div>
+        <div id="isWellFormed-container"></div>
+        <div id="cnfFormula-container"></div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>
