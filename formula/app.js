@@ -122,20 +122,34 @@
       }
       return termStack[0];
     }
-    getCnfFormula() {
-      let cnf = this.CNF();
-      return getFormula_(cnf);
-      function getFormula_(node) {
-        if (node.symbol == "\\vee") {
-          return "(" + getFormula_(node.children[0]) + " \\vee " + getFormula_(node.children[1]) + ")";
-        } else if (node.symbol == "\\rightarrow") {
-          return "(" + getFormula_(node.children[0]) + " \\rightarrow " + getFormula_(node.children[1]) + ")";
-        } else if (node.symbol == "\\wedge") {
-          return "(" + getFormula_(node.children[0]) + " \\wedge " + getFormula_(node.children[1]) + ")";
-        } else if (node.symbol == "\\neg") {
-          return " \\neg " + getFormula_(node.children[0]);
+    getFormula(form) {
+      let node;
+      switch (form) {
+        case "implFree":
+          node = this.implFree();
+          break;
+        case "NNF":
+          node = this.NNF();
+          break;
+        case "CNF":
+          node = this.CNF();
+          break;
+        default:
+          node = this.getParseTree();
+          break;
+      }
+      return getFormula_(node);
+      function getFormula_(node2) {
+        if (node2.symbol == "\\vee") {
+          return "" + getFormula_(node2.children[0]) + " \\vee " + getFormula_(node2.children[1]);
+        } else if (node2.symbol == "\\rightarrow") {
+          return "(" + getFormula_(node2.children[0]) + " \\rightarrow " + getFormula_(node2.children[1]) + ")";
+        } else if (node2.symbol == "\\wedge") {
+          return "(" + getFormula_(node2.children[0]) + ") \\wedge (" + getFormula_(node2.children[1]) + ")";
+        } else if (node2.symbol == "\\neg") {
+          return " \\neg " + getFormula_(node2.children[0]);
         } else {
-          return node.symbol;
+          return node2.symbol;
         }
       }
     }
@@ -299,7 +313,7 @@
       let isWellFormed = f.isWellFormed();
       let cnfFormula;
       if (isWellFormed) {
-        cnfFormula = f.getCnfFormula();
+        cnfFormula = f.getFormula();
       }
       return { isWellFormed, cnfFormula };
     } catch (error) {
