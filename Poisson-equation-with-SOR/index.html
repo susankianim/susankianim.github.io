@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" />
+		<title>Poisson Equation with SOR</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="container-fluid">
+				<div
+					style="
+						align-items: center;
+						display: flex;
+						justify-content: center;
+					">
+					<main class="linear-system">
+						<h1 class="linear-system__header">
+							Poisson Equation with SOR
+						</h1>
+						<section class="linear-system__data">
+							<form
+								id="linear-system__data-form"
+								action="javascript:void(0);">
+								<div class="linear-system__input-container">
+									<div class="linear-system__count-container">
+										<div class="linear-system__input-label">
+											<label for="n-input">n</label>
+											<input
+												id="n-input"
+												class="linear-system__dimention-input"
+												type="number" />
+										</div>
+
+										<div class="linear-system__input-label">
+											<label for="count-input"
+												>count</label
+											>
+											<input
+												id="count-input"
+												class="linear-system__dimention-input"
+												type="number" />
+										</div>
+
+										<div class="linear-system__input-label">
+											<label for="w-input">ω step</label>
+											<input
+												id="w-input"
+												class="linear-system__dimention-input"
+												type="text" />
+										</div>
+									</div>
+
+									<div class="linear-system__rule-container">
+										<input
+											id="f-input"
+											class="linear-system__rule-input"
+											type="text"
+											placeholder="function rule" />
+									</div>
+
+									<input
+										class="linear-system__submit-btn"
+										type="submit" />
+								</div>
+							</form>
+						</section>
+
+						<section class="linear-system__result">
+							<section
+								class="linear-system__result-w-selection"></section>
+
+							<section
+								class="linear-system__result-table-container">
+								<table
+									class="linear-system__result-table"></table>
+							</section>
+
+							<section
+								class="linear-system__result-chart-container">
+								<canvas id="myChart"></canvas>
+							</section>
+
+							<section
+								class="linear-system__result-chart-container">
+								<canvas id="myChart2"></canvas>
+							</section>
+						</section>
+					</main>
+				</div>
+			</div>
+		</div>
+
+		<script type="module" src="./app.js"></script>
+	</body>
+</html>
