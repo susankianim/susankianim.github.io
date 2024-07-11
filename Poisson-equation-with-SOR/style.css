@@ -271,6 +271,9 @@ td {
 	}
 
 	.linear-system__result-chart-container {
+		position: relative; 
+		height:100vh; 
+		/* width:80vw */
 		width: 100%;
 	}
 

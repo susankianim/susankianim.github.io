@@ -14590,6 +14590,23 @@
         "#cc9621",
         "#801d60"
       ];
+      let options = {
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            stacked: true,
+            grid: {
+              display: true,
+              color: "rgba(255,99,132,0.2)"
+            }
+          },
+          x: {
+            grid: {
+              display: false
+            }
+          }
+        }
+      };
       let datasetsArr = errors.map((e, index2) => {
         return {
           label: w_s[index2],
@@ -14609,7 +14626,11 @@
           chartStatus.destroy();
         }
         let canvas = document.getElementById("myChart");
-        let myChart = new auto_default(canvas, { type: "line", data: chartData });
+        let myChart = new auto_default(canvas, {
+          type: "line",
+          data: chartData,
+          options
+        });
         myChart.update();
       } catch (e) {
         console.log(e);
@@ -14637,7 +14658,8 @@
           let canvas2 = document.getElementById("myChart2");
           let myChart2 = new auto_default(canvas2, {
             type: "line",
-            data: chartData2
+            data: chartData2,
+            options
           });
           myChart2.update();
         } catch (e) {
