@@ -14596,8 +14596,7 @@
           y: {
             stacked: true,
             grid: {
-              display: true,
-              color: "rgba(255,99,132,0.2)"
+              display: true
             }
           },
           x: {
