@@ -14568,7 +14568,7 @@
 			</select>`
       );
       let selected = document.getElementById("w-selection-box");
-      selected.addEventListener("click", (event2) => {
+      selected.addEventListener("change", (event2) => {
         makeTable(table, results[event2.target.value]);
       });
       makeTable(table, results[0]);
