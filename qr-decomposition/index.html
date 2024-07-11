@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" />
+		<title>QR Decompostion</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="container-fluid">
+				<div id="container-custom">
+					<main class="linear-system">
+						<h1 class="linear-system__header">QR Decompostion</h1>
+						<section class="linear-system__data">
+							<form action="javascript:void(0);">
+								<div class="linear-system__dimention-container">
+									<label for="dim-input">Dimension</label>
+									<input
+										id="dim-input"
+										class="linear-system__dimention-input"
+										type="number"
+										value="3" />
+
+									<input
+										class="linear-system__dimention-btn"
+										type="submit" />
+								</div>
+							</form>
+
+							<form
+								id="frmMain"
+								class="linear-system__form"
+								action="javascript:void(0);">
+								<div class="linear-system__matrix">
+									<div class="linear-system__matrix-row">
+										<input
+											class="linear-system__matrix-input"
+											value="1"
+											type="text" />
+
+										<input
+											class="linear-system__matrix-input"
+											value="1"
+											type="text" />
+
+										<input
+											class="linear-system__matrix-input"
+											value="0"
+											type="text" />
+									</div>
+
+									<div class="linear-system__matrix-row">
+										<input
+											class="linear-system__matrix-input"
+											type="text"
+											value="1" />
+
+										<input
+											class="linear-system__matrix-input"
+											type="text"
+											value="0" />
+
+										<input
+											class="linear-system__matrix-input"
+											type="text"
+											value="1" />
+									</div>
+
+									<div class="linear-system__matrix-row">
+										<input
+											class="linear-system__matrix-input"
+											type="text"
+											value="0" />
+
+										<input
+											class="linear-system__matrix-input"
+											type="text"
+											value="1" />
+
+										<input
+											class="linear-system__matrix-input"
+											type="text"
+											value="1" />
+									</div>
+								</div>
+
+								<div class="submit-btn__container">
+									<input
+										id="gramschmidt-btn"
+										class="submit-btn"
+										type="submit"
+										value="Gram Schmidt" />
+
+									<input
+										id="householder-btn"
+										class="submit-btn"
+										type="submit"
+										value="HouseHolder" />
+								</div>
+							</form>
+						</section>
+
+						<section class="linear-system__symbol">
+							A = Q × R
+						</section>
+
+						<section class="linear-system__result">
+							<div class="result-container"></div>
+
+							<div class="result-container"></div>
+						</section>
+
+						<div id="spline-container"></div>
+						<div class="chart"><canvas id="myChart"></canvas></div>
+					</main>
+				</div>
+			</div>
+		</div>
+
+		<script type="module" src="../app.js"></script>
+	</body>
+</html>

@@ -1,0 +1,168 @@
+html {
+	font-family: Verdana, sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.linear-system {
+	align-items: center;
+	border: solid rgb(220, 220, 220);
+	border-width: 0px 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 2rem;
+}
+
+#container-custom {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.linear-system__dimention-container {
+	margin-bottom: 1rem;
+}
+
+.linear-system__dimention-input {
+	text-align: center;
+	width: 4rem;
+}
+
+.linear-system__dimention-btn {
+	border: none;
+	background-color: #ccc;
+	margin: 0.75rem;
+	padding: 0.2rem 1rem;
+
+}
+
+.linear-system__dimention-btn:hover {
+	background-color: #a5a5a5;
+	cursor: pointer;
+}
+
+.linear-system__data {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.linear-system__form {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.linear-system__matrix {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 1rem 2rem;
+	position: relative;
+}
+
+.linear-system__matrix:before,
+.linear-system__matrix:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	border: 1px solid #000;
+	width: 6px;
+	height: 100%;
+}
+
+.linear-system__matrix:before {
+	left: -0.75rem;
+	border-right: 0;
+}
+
+.linear-system__matrix:after {
+	right: -0.75rem;
+	border-left: 0;
+}
+
+.linear-system__matrix-row {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.linear-system__matrix-input {
+	height: 2rem;
+	margin: 2px;
+	text-align: center;
+	width: 2rem;
+}
+
+.submit-btn {
+	border: none;
+	background-color: #ccc;
+	margin: 0.75rem;
+	padding: 0.5rem 2rem;
+}
+
+.submit-btn:hover {
+	background-color: #a5a5a5;
+	cursor: pointer;
+}
+
+.linear-system__symbol {
+	margin: 1.25rem 0;
+}
+
+.linear-system__result {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.linear-system__matrix-output {
+	height: 2rem;
+	margin: 0.5rem;
+	text-align: center;
+	width: 5rem;
+}
+
+.selected {
+	color: #fff;
+	background-color: #2ca63c;
+	border: none;
+}
+
+.selected:hover {
+	background-color: #22822f;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+	.submit-btn__container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#container-custom {
+		display: block;
+	}
+
+	.linear-system {
+		padding: 0 0.5rem;
+	}
+
+	.linear-system__result {
+		flex-direction: column;
+	}
+
+	.linear-system__matrix-output {
+		height: 2rem;
+		font-size: 0.75rem;
+		/* margin: 0.5rem; */
+		text-align: center;
+		width: 3rem;
+	}
+}
