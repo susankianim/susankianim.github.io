@@ -138,11 +138,6 @@ html {
 	width: 2rem;
 }
 
-.linear-system__unknown {
-}
-.linear-system__known {
-}
-
 .submit-btn {
 	margin: 1rem 0;
 }
@@ -213,9 +208,10 @@ th {
 	height: 100%;
 }
 
-.linear-system__result-chart-container {
+.linear-system__result-chart-container,
+.chart-layout {
 	align-items: center;
-	display: flex;
+	/* display: flex; */
 	justify-content: center;
 	position: relative;
 	margin: auto;
@@ -250,12 +246,10 @@ td {
 		width: 100%;
 	}
 
-	.linear-system__result-chart-container {
-		position: relative;
-		margin: auto;
+	.linear-system__result-chart-container,
+	.chart-layout {
 		height: 60vh;
-		width: 100%;
-		margin-bottom: 1.5rem;
+		margin-bottom: 7rem;
 	}
 }
 
@@ -275,12 +269,9 @@ td {
 		width: 100%;
 	}
 
-	.linear-system__result-chart-container {
-		position: relative;
-		margin: auto;
+	.linear-system__result-chart-container,
+	.chart-layout {
 		height: 60vh;
-		width: 100%;
-		margin-bottom: 1.5rem;
 	}
 
 	.linear-system__input-label {

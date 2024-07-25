@@ -14538,6 +14538,12 @@
     const wSelection = document.querySelector(
       ".linear-system__result-w-selection"
     );
+    const myChartContainer = document.querySelector(
+      ".linear-system__result-myChart-container"
+    );
+    const myChart2Container = document.querySelector(
+      ".linear-system__result-myChart2-container"
+    );
     const table = document.querySelector(".linear-system__result-table");
     let result = [];
     let errors = [];
@@ -14594,7 +14600,7 @@
         maintainAspectRatio: false,
         scales: {
           y: {
-            stacked: true,
+            // stacked: true,
             grid: {
               display: true
             }
@@ -14606,35 +14612,57 @@
           }
         }
       };
-      let datasetsArr = errors.map((e, index2) => {
-        return {
-          label: w_s[index2],
-          data: e,
-          borderColor: colors2[index2 % colors2.length],
-          borderWidth: 1,
-          pointRadius: 0
-        };
-      });
-      chartData = {
-        labels: errors[0].map((_, index2) => index2 + 1),
-        datasets: datasetsArr
-      };
-      try {
-        let chartStatus = auto_default.getChart("myChart");
-        if (chartStatus) {
-          chartStatus.destroy();
-        }
-        let canvas = document.getElementById("myChart");
-        let myChart = new auto_default(canvas, {
-          type: "line",
-          data: chartData,
-          options
+      myChartContainer.innerHTML = "";
+      myChart2Container.innerHTML = "";
+      if (count > 1) {
+        myChartContainer.insertAdjacentHTML(
+          "beforeend",
+          `<div class="chart-layout">
+					<p>Each plot for each omega shows how much error there is at each step of the iteration. </p>
+					<section class="linear-system__result-chart-container">
+						<canvas id="myChart"></canvas>
+					</section>
+				</div>`
+        );
+        let datasetsArr = errors.map((e, index2) => {
+          return {
+            label: w_s[index2],
+            data: e,
+            borderColor: colors2[index2 % colors2.length],
+            borderWidth: 1,
+            pointRadius: 0
+          };
         });
-        myChart.update();
-      } catch (e) {
-        console.log(e);
+        chartData = {
+          labels: errors[0].map((_, index2) => index2 + 1),
+          datasets: datasetsArr
+        };
+        try {
+          let chartStatus = auto_default.getChart("myChart");
+          if (chartStatus) {
+            chartStatus.destroy();
+          }
+          let canvas = document.getElementById("myChart");
+          let myChart = new auto_default(canvas, {
+            type: "line",
+            data: chartData,
+            options
+          });
+          myChart.update();
+        } catch (e) {
+          console.log(e);
+        }
       }
       if (w_s.length > 1) {
+        myChart2Container.insertAdjacentHTML(
+          "beforeend",
+          `<div class="chart-layout">
+					<p>Each plot for each step of the iteration shows how much error there is per omega. </p>
+					<section class="linear-system__result-chart-container">
+						<canvas id="myChart2"></canvas>
+					</section>
+				</div>`
+        );
         let errors2 = transpose(errors);
         let datasetsArr2 = errors2.map((e, index2) => {
           return {
